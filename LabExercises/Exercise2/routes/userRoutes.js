@@ -4,4 +4,4 @@ const { createUser } = require("../controllers/userController");
 
 router.post("/create", createUser);
 
-moduke.exports = router;
+module.exports = router;
