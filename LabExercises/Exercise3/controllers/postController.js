@@ -4,6 +4,9 @@ exports.createPost = (req, res) => {
   const { title, description, user } = req.body;
   const image = req.file ? req.file.filename : null;
 
+  console.log("BODY:", req.body);
+  console.log("FILE:", req.file);
+
   if (!title || !description || !user || !image) {
     return res.status(400).json({ message: "All fields are required" });
   }
