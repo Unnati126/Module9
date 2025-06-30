@@ -1,9 +1,13 @@
 const express = require("express");
-const app = express();
-const activityRoutse = require("./routes/activityRoutes");
+const dotenv = require("dotenv");
+const activityRoutes = require("./routes/activityRoutes");
 
+dotenv.config();
+
+const app = express();
 app.use(express.json());
-app.use("/api/activities", activityRoutse);
+
+app.use("/api/activity", activityRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
