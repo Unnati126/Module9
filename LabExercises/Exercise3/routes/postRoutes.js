@@ -59,4 +59,7 @@ const upload = multer({ storage, fileFilter });
 // ✅ Route for creating post with image
 router.post("/create", upload.single("image"), postController.createPost);
 
+router.post("/like", postController.likePost);
+router.post("/comment", postController.commentPost);
+
 module.exports = router;
